@@ -1,0 +1,25 @@
+{
+  "name": "cipress",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/lekoshonia-sys/cipress#readme",
+  "bugs": {
+    "url": "https://github.com/lekoshonia-sys/cipress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lekoshonia-sys/cipress.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cypress": "^15.10.0",
+    "install": "^0.13.0",
+    "npm": "^11.9.0"
+  }
+}
