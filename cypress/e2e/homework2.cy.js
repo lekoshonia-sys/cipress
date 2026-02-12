@@ -1,6 +1,7 @@
 describe('login informaation', () => {
   it('logini', () => {
     cy.visit('https://automationteststore.com/index.php?rt=account/login')
+    
 
 cy.get('#loginFrm_loginname').type('leko53')
 cy.get('#loginFrm_password').type('nanikodadu12')
