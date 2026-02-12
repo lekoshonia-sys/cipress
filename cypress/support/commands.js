@@ -1,25 +1,23 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('login', (username, password) => {
+
+  cy.visit('https://automationteststore.com/index.php?rt=account/login')
+
+  cy.get('#loginFrm_loginname').type(username)
+  cy.get('#loginFrm_password').type(password)
+  cy.get('button[title="Login"]').click()
+  cy.get('countFrm_firstname').type(username)
+  cy.get('countFrm_lastname').type(username)
+  cy.get('countFrm_email').type(username)
+  cy.get('countFrm_telephone').type(username)
+  cy.get('button[title="Continue"]').click()
+  cy.get('#PasswordFrm_current_password').type(password)
+  cy.get('#PasswordFrm_password').type(password)
+  cy.get('#PasswordFrm_confirm').type(password)
+  cy.get('button[title="Continue"]').click()
+  
+
+
+  
+})
+
+
