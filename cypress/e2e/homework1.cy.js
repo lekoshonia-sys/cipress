@@ -1,9 +1,18 @@
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('https://automationexercise.com/login')
+import userdata from '../fixtures/user.json'
+describe('login informaation', () => {
+ beforeEach(() => {
+ cy.visit('https://automationexercise.com/login')
+ 
+})
+
+
+ 
+it('logini', () => {
+   
     
-    cy.get('[data-qa="signup-name"]').type('testleko')
-    cy.get('[data-qa="signup-email"]').type('testlekoshoniaaaaa@gmail.com')
+
+    cy.get('[data-qa="signup-name"]').type(userdata.username)
+    cy.get('[data-qa="signup-email"]').type(userdata.email)
     cy.get('[data-qa="signup-button"]').click()
     cy.contains("Enter Account Information").should("be.visible")
     cy.get('#id_gender1').check()
@@ -11,8 +20,8 @@ describe('template spec', () => {
     cy.get('[data-qa="months"]').select("December") 
     cy.get('[data-qa="days"]').select(25)
     cy.get('[data-qa="years"]').select("1989")
-    cy.get('[data-qa="first_name"]').type("leko")
-    cy.get('[data-qa="last_name"]').type("shonia")
+    cy.get('[data-qa="first_name"]').type('leko')
+    cy.get('[data-qa="last_name"]').type('shonia')
     cy.get('[data-qa="company"]').type("smartacademy")
     cy.get('[data-qa="address"]').type("mesxis qucha")
     cy.get('[data-qa="country"]').select("Singapore")
@@ -27,8 +36,6 @@ describe('template spec', () => {
     cy.contains("Delete Account").click()
     cy.contains("Account Deleted!").should("be.visible")
     
-   
     
-  })
-
+ })
 })
